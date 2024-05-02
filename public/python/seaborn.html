@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css"> <!-- Link to CSS file -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q7JBLSHEHB');
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>SQL and Python basic for Beginners</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Chapters
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./index.html">Python</a></li>
+                                <li><a class="dropdown-item" href="./pybasic.html">Python Basic</a></li>
+                                <li><a class="dropdown-item" href="./pyda.html">Python for Data Analysis</a></li>
+                                <li><a class="dropdown-item" href="./pandas.html">Pandas</a></li>
+                                <li><a class="dropdown-item" href="./numpy.html">Numpy</a></li>
+                                <li><a class="dropdown-item" href="./seaborn.html">Seaborn</a></li>
+                                <li><a class="dropdown-item" href="./matlpotlib.html">Matplotlib</a></li>
+                                <!-- <li><a class="dropdown-item" href="./a.html"></a></li>
+                                <li><a class="dropdown-item" href="./j.html">Joining Commands</a></li>
+                                <li><a class="dropdown-item" href="./p.html">Advanced SQL</a></li>
+                                <li><a class="dropdown-item" href="./time.html">Time and Date</a></li> -->
+
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>  -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+         <!-- Main Content Section -->
+    <div>
+        <!-- Introduction to Seaborn -->
+        <section>
+            <h2>Introduction to Seaborn</h2>
+            <p>Seaborn is a high-level interface for creating beautiful statistical graphics in Python. It is built on Matplotlib, allowing for easy customization and integration with other libraries like Pandas and NumPy.</p>
+            <p>In this blog, we'll cover the basics of Seaborn, including data preparation, creating plots, and customizing your visualizations. Let's dive in!</p>
+        </section>
+
+        <!-- Getting Started with Seaborn -->
+        <section class="mb-5">
+            <h2>Getting Started with Seaborn</h2>
+            <p>To start using Seaborn, you need to import the necessary libraries and prepare some data. Here's the typical import convention and how to load a sample dataset:</p>
+            <pre>
+                <code>
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# Load a sample dataset
+tips = sns.load_dataset("tips")
+                </code>
+            </pre>
+            <p>With Seaborn, you can load built-in datasets like "tips" and "titanic" to practice with. This dataset preparation is the first step in creating plots with Seaborn.</p>
+        </section>
+
+        <!-- Categorical Plots -->
+        <section class="mb-5">
+            <h2>Categorical Plots</h2>
+            <p>Seaborn offers various plots for visualizing categorical data. Here are some popular examples:</p>
+            <ul>
+                <li><strong>Barplot:</strong> A bar chart that shows point estimates and confidence intervals. This example shows average tip by day of the week:</li>
+            </ul>
+            <pre>
+                <code>
+# Create a barplot
+sns.barplot(x="day", y="tip", data=tips)
+plt.show()
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Countplot:</strong> A bar chart that shows the count of observations in each category. This example shows the count of different days in the "tips" dataset:</li>
+            </ul>
+            <pre>
+                <code>
+# Create a countplot
+sns.countplot(x="day", data=tips)
+plt.show()
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Boxplot:</strong> A box-and-whisker plot showing the distribution of data. This example shows the distribution of total bills by day of the week:</li>
+            </ul>
+            <pre>
+                <code>
+# Create a boxplot
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.show()
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Violinplot:</strong> Combines aspects of a boxplot and a KDE plot, showing data distribution. This example shows the distribution of tips by day:</li>
+            </ul>
+            <pre>
+                <code>
+# Create a violinplot
+sns.violinplot(x="day", y="tip", data=tips)
+plt.show()
+                </code>
+            </pre>
+        </section>
+
+        <!-- Regression Plots -->
+        <section class="mb-5">
+            <h2>Regression Plots</h2>
+            <p>Seaborn provides various plots for visualizing relationships between variables and fitting regression models. Here are some common regression plots:</p>
+            <ul>
+                <li><strong>Regression Plot (regplot):</strong> Plots data with a linear regression line. This example shows the relationship between total bill and tip:</li>
+            </ul>
+            <pre>
+                <code>
+# Create a regression plot
+sns.regplot(x="total_bill", y="tip", data=tips)
+plt.show()
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Jointplot:</strong> Combines scatter plots with marginal distribution plots. This example shows a scatter plot of total bill and tip with marginal histograms:</li>
+            </ul>
+            <pre>
+                <code>
+# Create a jointplot
+sns.jointplot(x="total_bill", y="tip", data=tips, kind="scatter")
+plt.show()
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Pairplot:</strong> Plots pairwise relationships in a dataset. This example shows pairwise relationships in the "iris" dataset:</li>
+            </ul>
+            <pre>
+                <code>
+# Create a pairplot
+iris = sns.load_dataset("iris")
+sns.pairplot(iris, hue="species")
+plt.show()
+                </code>
+            </pre>
+        </section>
+
+        <!-- Distribution Plots -->
+        <section class="mb-5">
+            <h2>Distribution Plots</h2>
+            <p>Seaborn offers plots for visualizing the distribution of data. Here are some examples of distribution plots:</p>
+            <ul>
+                <li><strong>Distplot:</strong> Combines a histogram with a KDE (Kernel Density Estimate). This example shows the distribution of tips:</li>
+            </ul>
+            <pre>
+                <code>
+# Create a distplot
+sns.distplot(tips["tip"], kde=True, color="b")
+plt.show()
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Heatmap:</strong> Shows the distribution of values across a grid. This example creates a heatmap with random data:</li>
+            </ul>
+            <pre>
+                <code>
+# Create a heatmap
+uniform_data = np.random.rand(10, 12)
+sns.heatmap(uniform_data, vmin=0, vmax=1)
+plt.show()
+                </code>
+            </pre>
+        </section>
+
+        <!-- Customization and Styling -->
+        <section class="mb-5">
+            <h2>Customization and Styling</h2>
+            <p>Seaborn provides several options for customizing plots, adjusting aesthetics, and using different color palettes. Here are some common customizations:</p>
+            <ul>
+                <li><strong>Setting Style:</strong> Change the overall look of the plots with `set_style`:</li>
+            </ul>
+            <pre>
+                <code>
+# Set style to whitegrid
+sns.set_style("whitegrid")
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Color Palettes:</strong> Define custom color palettes or use built-in ones. This example shows how to set a custom color palette:</li>
+            </ul>
+            <pre>
+                <code>
+# Define a custom color palette
+flatui = ["#9b59b6", "#3498db", "#95a5a6", "#e74c3c", "#34495e", "#2ecc71"]
+sns.set_palette(flatui)
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Title and Axis Labels:</strong> Customize plot titles and axis labels:</li>
+            </ul>
+            <pre>
+                <code>
+# Add a title and axis labels
+plt.title("Tips by Day")
+plt.xlabel("Day")
+plt.ylabel("Tips")
+                </code>
+            </pre>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-5">
+            <h2>Conclusion</h2>
+            <p>Seaborn is a versatile library for creating attractive statistical graphics in Python. This blog covered the basics of Seaborn, including categorical plots, regression plots, distribution plots, and customization options. With these basics, you're ready to explore more advanced visualizations and create compelling data science insights.</p>
+            <p>We hope you enjoyed this blog. Stay tuned for more content on Python for data science, and feel free to share your questions or comments below.</p>
+        </section>
+    </div>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Data Enthusiasts Blog. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

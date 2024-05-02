@@ -8,15 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css"> <!-- Link to CSS file -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-Q7JBLSHEHB');
-</script>
+        gtag('config', 'G-Q7JBLSHEHB');
+    </script>
 </head>
 
 <body>
@@ -40,165 +40,46 @@
                                 Chapters
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./intro.html">Python</a></li>
-                                <li><a class="dropdown-item" href="./b.html">Python Basic</a></li>
-                                <li><a class="dropdown-item" href="./dml.html">Python for Data Analysis</a></li>
-                                <li><a class="dropdown-item" href="./dcl.html">Pandas</a></li>
-                                <li><a class="dropdown-item" href="./ddl.html">Numpy</a></li>
-                                <li><a class="dropdown-item" href="./qc.html">Seaborn</a></li>
-                                <li><a class="dropdown-item" href="./s.html">Matplotlib</a></li>
-                                 <!-- <li><a class="dropdown-item" href="./a.html"></a></li>
+                                <li><a class="dropdown-item" href="./index.html">Python</a></li>
+                                <li><a class="dropdown-item" href="./pybasic.html">Python Basic</a></li>
+                                <li><a class="dropdown-item" href="./pyda.html">Python for Data Analysis</a></li>
+                                <li><a class="dropdown-item" href="./pandas.html">Pandas</a></li>
+                                <li><a class="dropdown-item" href="./numpy.html">Numpy</a></li>
+                                <li><a class="dropdown-item" href="./seaborn.html">Seaborn</a></li>
+                                <li><a class="dropdown-item" href="./matlpotlib.html">Matplotlib</a></li>
+                                <!-- <li><a class="dropdown-item" href="./a.html"></a></li>
                                 <li><a class="dropdown-item" href="./j.html">Joining Commands</a></li>
                                 <li><a class="dropdown-item" href="./p.html">Advanced SQL</a></li>
                                 <li><a class="dropdown-item" href="./time.html">Time and Date</a></li> -->
 
-                                <li><hr class="dropdown-divider"></li> 
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                    <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
-                  </li> 
+                            <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
+                        </li>
                     </ul>
-                     <form class="d-flex" role="search">
+                    <!-- <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> 
+                    </form>  -->
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        <div class="container my-4">
-             Introduction 
+        <div>
+            <!-- Introduction to Python -->
             <section class="mb-5">
-                <h2>Introduction</h2>
-                <p>Technology isn't just for developers. Non-technical people can use SQL and Python to make data work
-                    for them. With data playing a crucial role in today's world, understanding SQL and Python can help
-                    with business analysis, reporting, and automation.</p>
-                <p>In this blog, we'll explore how SQL is used to manage data in databases, and how Python can be used
-                    for automation and data analysis.</p>
-            </section>
-
-            <!-- Why SQL Matters for Non-Tech -->
-            <section class="mb-5">
-                <h2>Why SQL Matters for Non-Tech</h2>
-                <p>SQL (Structured Query Language) is a language designed to interact with databases. It can help
-                    retrieve data quickly from large datasets without needing to manually sift through spreadsheets.</p>
-                <p>SQL can be useful in non-technical roles like business analysts, marketing professionals, project
-                    managers, and HR specialists. Let's explore some practical uses of SQL.</p>
-            </section>
-
-            <!-- SQL for Non-Tech: Practical Uses -->
-            <section class="mb-5">
-                <h3>SQL for Non-Tech: Practical Uses</h3>
-                <ul>
-                    <li><strong>Data Retrieval:</strong> Use SQL to fetch specific information, like a list of customers
-                        from a database.</li>
-                    <li><strong>Basic Filtering:</strong> Use WHERE clauses to filter data, like retrieving sales data
-                        for a specific month.</li>
-                    <li><strong>Aggregation and Reporting:</strong> Use SQL functions like SUM and AVG to create simple
-                        reports, such as calculating total sales or average order value.</li>
-                </ul>
-
-                <h4>Example Queries</h4>
-                <pre>
-                    <code>
-    -- Fetch a list of customers
-    SELECT customer_name FROM customers;
-    
-    -- Retrieve sales data for January
-    SELECT * FROM sales WHERE month = 'January';
-    
-    -- Calculate total sales
-    SELECT SUM(amount) AS total_sales FROM sales;
-    
-    -- Calculate average order value
-    SELECT AVG(order_value) AS average_order_value FROM orders;
-                    </code>
-                </pre>
-            </section>
-
-            <!-- Why Python Matters for Non-Tech -->
-            <section class="mb-5">
-                <h2>Why Python Matters for Non-Tech</h2>
-                <p>Python is a versatile programming language. It can automate repetitive tasks, analyze data, and
-                    create simple scripts without complex coding. Non-technical roles like marketing, finance, or
-                    customer service can benefit from Python. Let's explore some practical uses.</p>
-            </section>
-
-            <!-- Python for Non-Tech: Practical Uses -->
-            <section class="mb-5">
-                <h3>Python for Non-Tech: Practical Uses</h3>
-                <ul>
-                    <li><strong>Automation:</strong> Use Python to automate tasks like data entry or email
-                        notifications.</li>
-                    <li><strong>Data Analysis:</strong> Use Python's Pandas library to load CSV files and get summary
-                        statistics.</li>
-                    <li><strong>Simple Scripts:</strong> Python can be used to create scripts for repetitive tasks, like
-                        renaming files or converting file formats.</li>
-                </ul>
-
-                <h4>Example Python Scripts</h4>
-                <pre>
-                    <code>
-    # Load a CSV file and get basic statistics
-    import pandas as pd
-    df = pd.read_csv('data.csv')
-    print(df.describe())
-    
-    # Automate email notifications
-    import smtplib
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login('your_email', 'your_password')
-    server.sendmail('from_email', 'to_email', 'This is a test email.')
-    server.quit()
-                    </code>
-                </pre>
-            </section>
-
-            <!-- Integrating SQL and Python for Non-Tech -->
-            <section class="mb-5">
-                <h2>Integrating SQL and Python for Non-Tech</h2>
-                <p>Python can interact with SQL databases, allowing non-technical people to retrieve data and perform
-                    basic analysis. Here's a simple example of using Python to connect to a SQL database, execute a
-                    query, and analyze the results with Pandas.</p>
-
-                <h4>Example: Using Python to Connect to a SQL Database</h4>
-                <pre>
-                    <code>
-    import sqlite3
-    import pandas as pd
-    
-    # Connect to the SQLite database
-    conn = sqlite3.connect('my_database.db')
-    
-    # Execute a SQL query
-    query = "SELECT * FROM customers"
-    df = pd.read_sql_query(query, conn)
-    
-    # Perform basic analysis
-    print(df.describe())
-                    </code>
-                </pre>
-            </section>
-
-            <!-- Real-Life Scenarios -->
-            <section class="mb-5">
-                <h2>Real-Life Scenarios</h2>
-                <p>Let's look at some real-life scenarios where SQL and Python can be useful for non-technical people:
-                </p>
-                <ul>
-                    <li><strong>Marketing Campaigns:</strong> SQL and Python can help analyze customer data to
-                        understand campaign effectiveness.</li>
-                    <li><strong>Financial Reporting:</strong> SQL can be used to generate financial reports, and Python
-                        can automate the process.</li>
-                    <li><strong>HR Data Analysis:</strong> SQL can retrieve employee data, and Python can help analyze
-                        trends in employee retention or performance.</li>
-                </ul>
+                <h2>Introduction to Python</h2>
+                <p>Python is a popular programming language known for its simplicity and readability. It is widely used
+                    for web development, data analysis, artificial intelligence, and more.</p>
+                <p>In this blog, we'll cover some basic Python concepts to help you get started on your programming
+                    journey.</p>
             </section>
         </div>
-
     </main>
 
     <footer>

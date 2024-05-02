@@ -71,15 +71,128 @@
     </header>
     <main>
         <div>
-            <!-- Introduction to Python -->
+           
+            
+
+            <!-- Python Variables and Data Types -->
             <section class="mb-5">
-                <h2>Introduction to Python</h2>
-                <p>Python is a popular programming language known for its simplicity and readability. It is widely used
-                    for web development, data analysis, artificial intelligence, and more.</p>
-                <p>In this blog, we'll cover some basic Python concepts to help you get started on your programming
-                    journey.</p>
+                <h2>Python Variables and Data Types</h2>
+                <p>In Python, variables are used to store data. You can create a variable by assigning it a value using
+                    the `=` operator.</p>
+                <p>Python has several basic data types:</p>
+                <ul>
+                    <li><strong>Integer:</strong> Whole numbers, such as 1, 2, or 3.</li>
+                    <li><strong>Float:</strong> Decimal numbers, such as 3.14 or 2.71.</li>
+                    <li><strong>String:</strong> Text, like 'Hello, World!'.</li>
+                    <li><strong>Boolean:</strong> Represents true or false values.</li>
+                </ul>
+
+                <h3>Example Code for Variables and Data Types</h3>
+                <pre>
+                    <code>
+    # Creating variables
+    x = 10  # Integer
+    y = 3.14  # Float
+    greeting = "Hello, World!"  # String
+    is_active = True  # Boolean
+    
+    # Printing variables
+    print(x)  # Output: 10
+    print(y)  # Output: 3.14
+    print(greeting)  # Output: Hello, World!
+    print(is_active)  # Output: True
+                    </code>
+                </pre>
+            </section>
+
+            <!-- Python Control Flow -->
+            <section class="mb-5">
+                <h2>Python Control Flow</h2>
+                <p>Control flow allows you to make decisions and repeat actions in Python. The common control flow
+                    structures are:</p>
+                <ul>
+                    <li><strong>If Statements:</strong> Make decisions based on conditions.</li>
+                    <li><strong>For Loops:</strong> Repeat actions over a sequence.</li>
+                    <li><strong>While Loops:</strong> Repeat actions while a condition is true.</li>
+                </ul>
+
+                <h3>Example Code for Control Flow</h3>
+                <pre>
+                    <code>
+    # If statements
+    x = 10
+    if x > 5:
+        print("x is greater than 5")  # Output: x is greater than 5
+    
+    # For loops
+    numbers = [1, 2, 3, 4, 5]
+    for number in numbers:
+        print(number)  # Output: 1 2 3 4 5
+    
+    # While loops
+    count = 0
+    while count < 3:
+        print(count)  # Output: 0 1 2
+        count += 1
+                    </code>
+                </pre>
+            </section>
+
+            <!-- Python Functions -->
+            <section class="mb-5">
+                <h2>Python Functions</h2>
+                <p>Functions in Python allow you to encapsulate a block of code and reuse it. A function can take
+                    parameters and return a value.</p>
+
+                <h3>Example Code for Functions</h3>
+                <pre>
+                    <code>
+    # Defining a function
+    def add(a, b):
+        return a + b
+    
+    # Using the function
+    result = add(2, 3)  # Output: 5
+    print(result)  # Output: 5
+    
+    # Function with default parameter
+    def greet(name="World"):
+        return f"Hello, {name}!"
+    
+    print(greet())  # Output: Hello, World!
+    print(greet("Alice"))  # Output: Hello, Alice!
+                    </code>
+                </pre>
+            </section>
+
+            <!-- Python Lists and Dictionaries -->
+            <section class="mb-5">
+                <h2>Python Lists and Dictionaries</h2>
+                <p>Lists and dictionaries are common data structures in Python.</p>
+                <ul>
+                    <li><strong>Lists:</strong> Ordered collections of items.</li>
+                    <li><strong>Dictionaries:</strong> Key-value pairs.</li>
+                </ul>
+
+                <h3>Example Code for Lists and Dictionaries</h3>
+                <pre>
+                    <code>
+    # Creating a list
+    fruits = ["apple", "banana", "orange"]
+    
+    # Accessing list items
+    print(fruits[0])  # Output: apple
+    
+    # Creating a dictionary
+    person = {"name": "Alice", "age": 30}
+    
+    # Accessing dictionary values
+    print(person["name"])  # Output: Alice
+                    </code>
+                </pre>
             </section>
         </div>
+
     </main>
 
     <footer>

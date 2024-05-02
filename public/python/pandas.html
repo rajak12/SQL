@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css"> <!-- Link to CSS file -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q7JBLSHEHB');
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>SQL and Python basic for Beginners</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Chapters
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./index.html">Python</a></li>
+                                <li><a class="dropdown-item" href="./pybasic.html">Python Basic</a></li>
+                                <li><a class="dropdown-item" href="./pyda.html">Python for Data Analysis</a></li>
+                                <li><a class="dropdown-item" href="./pandas.html">Pandas</a></li>
+                                <li><a class="dropdown-item" href="./numpy.html">Numpy</a></li>
+                                <li><a class="dropdown-item" href="./seaborn.html">Seaborn</a></li>
+                                <li><a class="dropdown-item" href="./matlpotlib.html">Matplotlib</a></li>
+                                <!-- <li><a class="dropdown-item" href="./a.html"></a></li>
+                                <li><a class="dropdown-item" href="./j.html">Joining Commands</a></li>
+                                <li><a class="dropdown-item" href="./p.html">Advanced SQL</a></li>
+                                <li><a class="dropdown-item" href="./time.html">Time and Date</a></li> -->
+
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>  -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Main Content Section -->
+        <div>
+            <!-- Introduction to Pandas -->
+            <section class="mb-5">
+                <h2>Introduction to Pandas</h2>
+                <p>Pandas is a popular Python library built on NumPy that provides easy-to-use data structures and data
+                    analysis tools. It is a cornerstone of Python-based data science and is widely used for data
+                    manipulation, analysis, and visualization.</p>
+                <p>If you're new to Pandas, the following sections will guide you through its basics and some advanced
+                    concepts.</p>
+            </section>
+
+            <!-- Pandas Data Structures -->
+            <section>
+                <h2>Pandas Data Structures</h2>
+                <p>Pandas provides two primary data structures for data analysis:</p>
+                <ul>
+                    <li><strong>Series:</strong> A one-dimensional labeled array that can hold any data type. Here's an
+                        example of creating a Pandas Series:</li>
+                </ul>
+                <pre>
+                <code>
+import pandas as pd
+s = pd.Series([3, -5, 7, 4], index=['a', 'b', 'c', 'd'])
+print(s)
+                </code>
+            </pre>
+                <ul>
+                    <li><strong>DataFrame:</strong> A two-dimensional data structure with labeled rows and columns. It
+                        can hold various data types across different columns. Here's an example of creating a DataFrame
+                        from a dictionary:</li>
+                </ul>
+                <pre>
+                <code>
+data = {
+    'Country': ['Belgium', 'India', 'Brazil'],
+    'Capital': ['Brussels', 'New Delhi', 'Brasília'],
+    'Population': [11190846, 1303171035, 207847528]
+}
+
+df = pd.DataFrame(data)
+print(df)
+                </code>
+            </pre>
+            </section>
+
+            <!-- Basic Data Manipulation with Pandas -->
+            <section class="mb-5">
+                <h2>Basic Data Manipulation with Pandas</h2>
+                <p>Pandas provides numerous functions for data manipulation and analysis. Let's explore some basic
+                    operations:</p>
+                <ul>
+                    <li><strong>Selection:</strong> Selecting specific rows or columns from a DataFrame. You can use
+                        label-based selection with `loc` or position-based selection with `iloc`:</li>
+                </ul>
+                <pre>
+                <code>
+# Select a single row by label
+df.loc[1]
+
+# Select a single column by position
+df.iloc[:, 1]
+
+# Select multiple rows by label
+df.loc[[1, 2]]
+                </code>
+            </pre>
+                <ul>
+                    <li><strong>Filtering:</strong> Applying conditions to retrieve specific data. Here's an example of
+                        filtering rows where the population is greater than 200 million:</li>
+                </ul>
+                <pre>
+                <code>
+# Filter rows where population is over 200 million
+filtered_df = df[df['Population'] > 200000000]
+print(filtered_df)
+                </code>
+            </pre>
+                <ul>
+                    <li><strong>Aggregation:</strong> Using functions like `sum`, `mean`, `median`, and `describe` to
+                        analyze data. Let's see how to calculate the sum of all populations:</li>
+                </ul>
+                <pre>
+                <code>
+# Calculate the sum of populations
+total_population = df['Population'].sum()
+print("Total Population:", total_population)
+                </code>
+            </pre>
+            </section>
+
+            <!-- Data I/O with Pandas -->
+            <section class="mb-5">
+                <h2>Data I/O with Pandas</h2>
+                <p>Pandas makes it easy to read and write data from various sources. Here are some common operations for
+                    data I/O:</p>
+                <ul>
+                    <li><strong>Read/Write to CSV:</strong> To read from a CSV file, you can use `pd.read_csv`. To write
+                        to a CSV file, use `df.to_csv`:</li>
+                </ul>
+                <pre>
+                <code>
+# Read from a CSV file
+df = pd.read_csv('my_data.csv')
+
+# Write to a CSV file
+df.to_csv('output.csv')
+                </code>
+            </pre>
+                <ul>
+                    <li><strong>Read/Write to Excel:</strong> Pandas supports reading and writing to Excel files. Here's
+                        an example:</li>
+                </ul>
+                <pre>
+                <code>
+# Write to an Excel file
+df.to_excel('output.xlsx', sheet_name='Sheet1')
+
+# Read from an Excel file
+df = pd.read_excel('input.xlsx', sheet_name='Sheet1')
+                </code>
+            </pre>
+                <ul>
+                    <li><strong>SQL Integration:</strong> Pandas can also interact with SQL databases. Here's an example
+                        of reading from and writing to a SQL database:</li>
+                </ul>
+                <pre>
+                <code>
+from sqlalchemy import create_engine
+
+# Create a SQLite engine
+engine = create_engine('sqlite:///:memory:')
+
+# Write to a SQL table
+df.to_sql('my_table', engine)
+
+# Read from a SQL query
+df = pd.read_sql("SELECT * FROM my_table;", engine)
+                </code>
+            </pre>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="mb-5">
+                <h2>Conclusion</h2>
+                <p>Pandas is a powerful library for data analysis in Python, offering versatile tools for data
+                    manipulation, aggregation, and integration with other systems. Whether you're new to data analysis
+                    or an experienced practitioner, Pandas has something to offer. We hope this blog has given you a
+                    solid starting point.</p>
+                <p>Stay tuned for more content on advanced topics in Pandas, and feel free to share your questions or
+                    comments below.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Data Enthusiasts Blog. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

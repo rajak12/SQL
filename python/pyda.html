@@ -70,16 +70,103 @@
         </nav>
     </header>
     <main>
-        <div>
-            <!-- Introduction to Python -->
-            <section class="mb-5">
-                <h2>Introduction to Python</h2>
-                <p>Python is a popular programming language known for its simplicity and readability. It is widely used
-                    for web development, data analysis, artificial intelligence, and more.</p>
-                <p>In this blog, we'll cover some basic Python concepts to help you get started on your programming
-                    journey.</p>
-            </section>
-        </div>
+        <section>
+            <h2>Getting Started with Pandas</h2>
+            <p>Pandas is a cornerstone library for data analysis in Python. It allows you to work with data in a structured way, similar to a spreadsheet. Let's explore some basic Pandas operations.</p>
+
+            <h3>Creating a DataFrame</h3>
+            <p>A DataFrame is a tabular data structure with labeled rows and columns. Here's how to create one from a dictionary:</p>
+            <pre>
+                <code>
+import pandas as pd
+
+# Create a simple DataFrame from a dictionary
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'City': ['New York', 'Los Angeles', 'Chicago']
+}
+
+df = pd.DataFrame(data)
+print(df)
+                </code>
+            </pre>
+
+            <h3>Basic Data Manipulation with Pandas</h3>
+            <p>Once you have a DataFrame, you can perform various operations to manipulate the data. Let's look at some basic examples:</p>
+            <ul>
+                <li><strong>Selecting Columns:</strong> Retrieve specific columns from the DataFrame.</li>
+                <li><strong>Filtering Rows:</strong> Apply conditions to filter rows based on certain criteria.</li>
+                <li><strong>Adding/Removing Columns:</strong> Add new columns or remove existing ones.</li>
+            </ul>
+            <pre>
+                <code>
+# Selecting specific columns
+print(df[['Name', 'City']])
+
+# Filtering rows where Age is greater than 30
+print(df[df['Age'] > 30])
+
+# Adding a new column
+df['Salary'] = [50000, 60000, 70000]
+print(df)
+
+# Removing a column
+df.drop('City', axis=1, inplace=True)
+print(df)
+                </code>
+            </pre>
+        </section>
+
+        <!-- Data Visualization with Matplotlib -->
+        <section class="mb-5">
+            <h2>Data Visualization with Matplotlib</h2>
+            <p>Matplotlib allows you to create various types of plots and charts to visualize your data. Let's look at some simple examples of data visualization with Matplotlib.</p>
+            
+            <h3>Creating a Line Plot</h3>
+            <p>A line plot is a simple way to visualize data over time or any continuous variable. Here's an example:</p>
+            <pre>
+                <code>
+import matplotlib.pyplot as plt
+
+# Data for the plot
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 30, 40, 50]
+
+# Create a line plot
+plt.plot(x, y)
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+plt.title('Simple Line Plot')
+plt.show()
+                </code>
+            </pre>
+
+            <h3>Creating a Bar Chart</h3>
+            <p>A bar chart is useful for comparing different categories. Here's an example:</p>
+            <pre>
+                <code>
+# Data for the bar chart
+categories = ['A', 'B', 'C']
+values = [5, 7, 3]
+
+# Create a bar chart
+plt.bar(categories, values)
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.title('Simple Bar Chart')
+plt.show()
+                </code>
+            </pre>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-5">
+            <h2>Conclusion</h2>
+            <p>Python is a powerful tool for data analysis. With libraries like Pandas, NumPy, and Matplotlib, you can manipulate, analyze, and visualize data with ease. We hope this blog has provided you with a solid starting point for your journey into data analysis with Python.</p>
+            <p>Stay tuned for more articles on advanced topics, and feel free to leave comments or questions below.</p>
+        </section>
+    </div>
     </main>
 
     <footer>
