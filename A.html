@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Practice Blog for Beginners</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+</head>
+<body>
+    <header>
+        <h1>SQL Practice Blog for Beginners</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#basics">SQL Basics</a></li>
+                <li><a href="#advanced">Advanced Topics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>Introduction to SQL</h2>
+            <p>SQL (Structured Query Language) is a standard language for managing databases. It is used to retrieve, insert, update, and delete data.</p>
+        </section>
+
+        <section id="basics">
+            <h2>SQL Basics</h2>
+            <h3>Creating a Database</h3>
+            <p>To create a database in SQL, use the <code>CREATE DATABASE</code> command.</p>
+            <pre><code>CREATE DATABASE my_database;</code></pre>
+
+            <h3>Creating a Table</h3>
+            <p>To create a table, specify the columns and their data types.</p>
+            <pre><code>
+CREATE TABLE users (
+    user_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);
+            </code></pre>
+
+            <h3>Basic SELECT Query</h3>
+            <p>To select data from a table, use the <code>SELECT</code> command.</p>
+            <pre><code>SELECT * FROM users;</code></pre>
+        </section>
+
+        <section id="advanced">
+            <h2>Advanced SQL Topics</h2>
+            <h3>JOINS</h3>
+            <p>JOINS allow you to combine data from multiple tables.</p>
+            <pre><code>
+SELECT u.name, o.order_id 
+FROM users u 
+JOIN orders o ON u.user_id = o.user_id;
+            </code></pre>
+
+            <h3>Aggregate Functions</h3>
+            <p>Aggregate functions summarize data, like counting or averaging.</p>
+            <pre><code>SELECT COUNT(*) FROM users;</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; </p>
+    </footer>
+</body>
+</html>
