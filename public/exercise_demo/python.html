@@ -8,15 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css"> <!-- Link to CSS file -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-Q7JBLSHEHB');
-</script>
+        gtag('config', 'G-Q7JBLSHEHB');
+    </script>
 </head>
 
 <body>
@@ -46,7 +46,7 @@
                                 <li><a class="dropdown-item" href="./python.html">Exercise Python</a></li>
 
 
-                                 <!-- <li><a class="dropdown-item" href="./dml.html">Data Manipulation Language (DML) Commands</a></li>                                
+                                <!-- <li><a class="dropdown-item" href="./dml.html">Data Manipulation Language (DML) Commands</a></li>                                
                                 <li><a class="dropdown-item" href="./dcl.html">Data Definition Language (DDL) Commands</a></li>                              
                                 <li><a class="dropdown-item" href="./ddl.html">Data Control Language (DCL) Commands</a>  </li>                                
                                  <li><a class="dropdown-item" href="./qc.html">Querying Data Commands</a></li>                                
@@ -60,10 +60,10 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                    <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
-                  </li> 
+                            <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
+                        </li>
                     </ul>
-                     <!-- <form class="d-flex" role="search">
+                    <!-- <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>  -->
@@ -72,23 +72,27 @@
         </nav>
     </header>
     <main>
-        
-       <!-- Header Section -->
-   
 
-    <!-- Main Content Section -->
-    <div class="container my-4">
-        <!-- Introduction to Pandas -->
-        <section class="mb-5">
-            <h2>Introduction to Pandas</h2>
-            <p>Pandas is a high-performance library in Python designed for data manipulation and analysis. It provides data structures like Series and DataFrames, allowing you to work with structured data similar to Excel spreadsheets. In this blog, you'll learn the basics of Pandas through various demos and examples.</p>
-        </section>
+        <!-- Header Section -->
 
-        <!-- Creating a DataFrame -->
-        <section class="mb-5">
-            <h2>Creating a DataFrame</h2>
-            <p>The DataFrame is the primary data structure in Pandas, representing a 2D table with labeled rows and columns. Here's how to create a DataFrame from a dictionary:</p>
-            <pre>
+
+        <!-- Main Content Section -->
+        <div class="container my-4">
+            <!-- Introduction to Pandas -->
+            <section class="mb-5">
+                <h2>Introduction to Pandas</h2>
+                <p>Pandas is a high-performance library in Python designed for data manipulation and analysis. It
+                    provides data structures like Series and DataFrames, allowing you to work with structured data
+                    similar to Excel spreadsheets. In this blog, you'll learn the basics of Pandas through various demos
+                    and examples.</p>
+            </section>
+
+            <!-- Creating a DataFrame -->
+            <section class="mb-5">
+                <h2>Creating a DataFrame</h2>
+                <p>The DataFrame is the primary data structure in Pandas, representing a 2D table with labeled rows and
+                    columns. Here's how to create a DataFrame from a dictionary:</p>
+                <pre>
                 <code>
 import pandas as pd
 
@@ -103,17 +107,19 @@ df = pd.DataFrame(data)
 print(df)
                 </code>
             </pre>
-            <p>This simple DataFrame contains information about three countries, their capitals, and their populations. You can add, remove, and manipulate data in a DataFrame in various ways.</p>
-        </section>
+                <p>This simple DataFrame contains information about three countries, their capitals, and their
+                    populations. You can add, remove, and manipulate data in a DataFrame in various ways.</p>
+            </section>
 
-        <!-- Selecting and Filtering Data -->
-        <section class="mb-5">
-            <h2>Selecting and Filtering Data</h2>
-            <p>Pandas allows you to select specific rows and columns and filter data based on conditions. Here are some examples:</p>
-            <ul>
-                <li><strong>Selecting Columns:</strong> Retrieve specific columns from a DataFrame:</li>
-            </ul>
-            <pre>
+            <!-- Selecting and Filtering Data -->
+            <section class="mb-5">
+                <h2>Selecting and Filtering Data</h2>
+                <p>Pandas allows you to select specific rows and columns and filter data based on conditions. Here are
+                    some examples:</p>
+                <ul>
+                    <li><strong>Selecting Columns:</strong> Retrieve specific columns from a DataFrame:</li>
+                </ul>
+                <pre>
                 <code>
 # Select a specific column
 print(df['Country'])
@@ -122,62 +128,68 @@ print(df['Country'])
 print(df[['Country', 'Capital']])
                 </code>
             </pre>
-            <ul>
-                <li><strong>Filtering Rows:</strong> Use conditions to filter data. This example retrieves countries with a population greater than 100 million:</li>
-            </ul>
-            <pre>
+                <ul>
+                    <li><strong>Filtering Rows:</strong> Use conditions to filter data. This example retrieves countries
+                        with a population greater than 100 million:</li>
+                </ul>
+                <pre>
                 <code>
 # Filter rows based on a condition
 filtered_df = df[df['Population'] > 100000000]
 print(filtered_df)
                 </code>
             </pre>
-        </section>
+            </section>
 
-        <!-- Data Manipulation -->
-        <section class="mb-5">
-            <h2>Data Manipulation</h2>
-            <p>Pandas provides a variety of functions for manipulating data, such as adding or removing columns, renaming columns, and handling missing data. Let's explore some common data manipulation techniques:</p>
-            <ul>
-                <li><strong>Adding Columns:</strong> You can add new columns to a DataFrame. This example adds a new column indicating the continent:</li>
-            </ul>
-            <pre>
+            <!-- Data Manipulation -->
+            <section class="mb-5">
+                <h2>Data Manipulation</h2>
+                <p>Pandas provides a variety of functions for manipulating data, such as adding or removing columns,
+                    renaming columns, and handling missing data. Let's explore some common data manipulation techniques:
+                </p>
+                <ul>
+                    <li><strong>Adding Columns:</strong> You can add new columns to a DataFrame. This example adds a new
+                        column indicating the continent:</li>
+                </ul>
+                <pre>
                 <code>
 # Add a new column
 df['Continent'] = ['North America', 'North America', 'North America']
 print(df)
                 </code>
             </pre>
-            <ul>
-                <li><strong>Renaming Columns:</strong> You can rename columns to give them meaningful names:</li>
-            </ul>
-            <pre>
+                <ul>
+                    <li><strong>Renaming Columns:</strong> You can rename columns to give them meaningful names:</li>
+                </ul>
+                <pre>
                 <code>
 # Rename a column
 df.rename(columns={'Country': 'Nation'}, inplace=True)
 print(df)
                 </code>
             </pre>
-            <ul>
-                <li><strong>Handling Missing Data:</strong> Pandas provides methods to fill or drop missing values. This example demonstrates filling missing values:</li>
-            </ul>
-            <pre>
+                <ul>
+                    <li><strong>Handling Missing Data:</strong> Pandas provides methods to fill or drop missing values.
+                        This example demonstrates filling missing values:</li>
+                </ul>
+                <pre>
                 <code>
 # Fill missing values with a default value
 df.fillna(value={'Capital': 'Unknown'}, inplace=True)
 print(df)
                 </code>
             </pre>
-        </section>
+            </section>
 
-        <!-- Data Aggregation and Summary Statistics -->
-        <section class="mb-5">
-            <h2>Data Aggregation and Summary Statistics</h2>
-            <p>Pandas offers functions for aggregating data and obtaining summary statistics. Let's look at some common operations:</p>
-            <ul>
-                <li><strong>Summary Statistics:</strong> Get basic statistics like mean, median, and count:</li>
-            </ul>
-            <pre>
+            <!-- Data Aggregation and Summary Statistics -->
+            <section class="mb-5">
+                <h2>Data Aggregation and Summary Statistics</h2>
+                <p>Pandas offers functions for aggregating data and obtaining summary statistics. Let's look at some
+                    common operations:</p>
+                <ul>
+                    <li><strong>Summary Statistics:</strong> Get basic statistics like mean, median, and count:</li>
+                </ul>
+                <pre>
                 <code>
 # Get summary statistics
 print(df.describe())
@@ -187,26 +199,29 @@ mean_population = df['Population'].mean()
 print("Mean Population:", mean_population)
                 </code>
             </pre>
-            <ul>
-                <li><strong>Data Aggregation:</strong> You can group data and apply aggregation functions. This example groups by continent and calculates the total population:</li>
-            </ul>
-            <pre>
+                <ul>
+                    <li><strong>Data Aggregation:</strong> You can group data and apply aggregation functions. This
+                        example groups by continent and calculates the total population:</li>
+                </ul>
+                <pre>
                 <code>
 # Group by a column and calculate the total population
 grouped_df = df.groupby('Continent').sum()
 print(grouped_df)
                 </code>
             </pre>
-        </section>
+            </section>
 
-        <!-- Data Visualization with Pandas -->
-        <section class="mb-5">
-            <h2>Data Visualization with Pandas</h2>
-            <p>Pandas integrates with Matplotlib to create basic plots for data visualization. Here are some examples of common visualizations:</p>
-            <ul>
-                <li><strong>Line Plot:</strong> A simple plot connecting data points. This example shows a line plot of the populations:</li>
-            </ul>
-            <pre>
+            <!-- Data Visualization with Pandas -->
+            <section class="mb-5">
+                <h2>Data Visualization with Pandas</h2>
+                <p>Pandas integrates with Matplotlib to create basic plots for data visualization. Here are some
+                    examples of common visualizations:</p>
+                <ul>
+                    <li><strong>Line Plot:</strong> A simple plot connecting data points. This example shows a line plot
+                        of the populations:</li>
+                </ul>
+                <pre>
                 <code>
 # Create a line plot
 df.plot(x='Nation', y='Population', kind='line')
@@ -216,10 +231,11 @@ plt.ylabel("Population")
 plt.show()
                 </code>
             </pre>
-            <ul>
-                <li><strong>Bar Plot:</strong> A plot with vertical bars representing data. This example shows a bar plot of populations:</li>
-            </ul>
-            <pre>
+                <ul>
+                    <li><strong>Bar Plot:</strong> A plot with vertical bars representing data. This example shows a bar
+                        plot of populations:</li>
+                </ul>
+                <pre>
                 <code>
 # Create a bar plot
 df.plot(x='Nation', y='Population', kind='bar', color='orange')
@@ -229,10 +245,11 @@ plt.ylabel("Population")
 plt.show()
                 </code>
             </pre>
-            <ul>
-                <li><strong>Histogram:</strong> A plot representing the distribution of data with bins. This example shows a histogram of populations:</li>
-            </ul>
-            <pre>
+                <ul>
+                    <li><strong>Histogram:</strong> A plot representing the distribution of data with bins. This example
+                        shows a histogram of populations:</li>
+                </ul>
+                <pre>
                 <code>
 # Create a histogram
 df['Population'].hist(bins=5, color='green')
@@ -242,16 +259,20 @@ plt.ylabel("Frequency")
 plt.show()
                 </code>
             </pre>
-        </section>
+            </section>
 
-        <!-- Conclusion -->
-        <section class="mb-5">
-            <h2>Conclusion</h2>
-            <p>Pandas is a powerful library for data manipulation and analysis in Python. This blog covered the basics of creating DataFrames, selecting and filtering data, data manipulation, data aggregation, and basic data visualization. With these techniques, you can begin exploring more advanced Pandas operations and build complex data pipelines.</p>
-            <p>We hope you found this blog helpful. Feel free to leave your questions or comments below, and stay tuned for more content on Python for data science and Pandas.</p>
-        </section>
-    </div>
-        
+            <!-- Conclusion -->
+            <section class="mb-5">
+                <h2>Conclusion</h2>
+                <p>Pandas is a powerful library for data manipulation and analysis in Python. This blog covered the
+                    basics of creating DataFrames, selecting and filtering data, data manipulation, data aggregation,
+                    and basic data visualization. With these techniques, you can begin exploring more advanced Pandas
+                    operations and build complex data pipelines.</p>
+                <p>We hope you found this blog helpful. Feel free to leave your questions or comments below, and stay
+                    tuned for more content on Python for data science and Pandas.</p>
+            </section>
+        </div>
+
 
     </main>
 
