@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css"> <!-- Link to CSS file -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q7JBLSHEHB');
+</script>
+</head>
+
+<body>
+    <header>
+        <h1>SQL and Python basic for Beginners</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Chapters
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./b.html">SQL Basis</a></li>
+                                <li><a class="dropdown-item" href="./python/index.html">Python Basic</a></li>
+                                <li><a class="dropdown-item" href="./sql.html">Exercise SQL</a></li>
+                                <li><a class="dropdown-item" href="./exercise_demo/python.html">Exercise Python</a></li>
+
+
+                                 <!-- <li><a class="dropdown-item" href="./dml.html">Data Manipulation Language (DML) Commands</a></li>                                
+                                <li><a class="dropdown-item" href="./dcl.html">Data Definition Language (DDL) Commands</a></li>                              
+                                <li><a class="dropdown-item" href="./ddl.html">Data Control Language (DCL) Commands</a>  </li>                                
+                                 <li><a class="dropdown-item" href="./qc.html">Querying Data Commands</a></li>                                
+                                  <li><a class="dropdown-item" href="./s.html">Subqueries in SQL</a></li>                                 
+                                  <li><a class="dropdown-item" href="./a.html">Aggregate Functions Commands</a></li>                                
+                                   <li><a class="dropdown-item" href="./j.html">Joining Commands</a></li>                                 
+                                   <li><a class="dropdown-item" href="./p.html">Advanced SQL</a></li>                                 
+                                   <li><a class="dropdown-item" href="./time.html">Time and Date</a></li>  -->
+
+                                <!-- <li><hr class="dropdown-divider"></li>  -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                    <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
+                  </li> 
+                    </ul>
+                     <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>  -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        
+        <!-- Header Section -->
+        <p>Learn SQL through practical exercises and examples.</p>
+
+    <!-- Main Content Section -->
+    <div class="container my-4">
+        <!-- Introduction to SQL -->
+        <section class="mb-5">
+            <h2>Introduction to SQL</h2>
+            <p>SQL (Structured Query Language) is a standard language for accessing and managing databases. It is widely used in data-driven environments to retrieve, insert, update, and delete data. In this blog, we'll explore SQL basics through practical examples and exercises.</p>
+            <p>Let's start with setting up a sample database for our SQL practice demo:</p>
+            <pre>
+                <code>
+-- Create a sample table for practice
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT,
+    department VARCHAR(50),
+    salary FLOAT
+);
+
+-- Insert sample data into the table
+INSERT INTO employees (id, name, age, department, salary)
+VALUES
+    (1, 'Alice', 28, 'Engineering', 60000),
+    (2, 'Bob', 35, 'Marketing', 55000),
+    (3, 'Charlie', 32, 'Engineering', 70000),
+    (4, 'Diana', 27, 'HR', 45000);
+                </code>
+            </pre>
+        </section>
+
+        <!-- Basic SQL Operations -->
+        <section>
+            <h2>Basic SQL Operations</h2>
+            <p>Now that we have a sample table, let's explore some basic SQL operations to interact with the data:</p>
+            <ul>
+                <li><strong>SELECT:</strong> Retrieve data from the table. Here's an example of selecting all records from the "employees" table:</li>
+            </ul>
+            <pre>
+                <code>
+-- Select all records from the employees table
+SELECT * FROM employees;
+                </code>
+            </pre>
+            <ul>
+                <li><strong>WHERE:</strong> Filter data based on conditions. Here's an example of selecting employees from the "Engineering" department:</li>
+            </ul>
+            <pre>
+                <code>
+-- Select employees from the Engineering department
+SELECT * FROM employees WHERE department = 'Engineering';
+                </code>
+            </pre>
+            <ul>
+                <li><strong>ORDER BY:</strong> Sort data in ascending or descending order. This example sorts employees by salary in descending order:</li>
+            </ul>
+            <pre>
+                <code>
+-- Sort employees by salary in descending order
+SELECT * FROM employees ORDER BY salary DESC;
+                </code>
+            </pre>
+            <ul>
+                <li><strong>LIMIT:</strong> Limit the number of records returned by a query. This example retrieves the top 2 highest-paid employees:</li>
+            </ul>
+            <pre>
+                <code>
+-- Get the top 2 highest-paid employees
+SELECT * FROM employees ORDER BY salary DESC LIMIT 2;
+                </code>
+            </pre>
+        </section>
+
+        <!-- Advanced SQL Operations -->
+        <section>
+            <h2>Intermediate SQL Operations</h2>
+            <p>SQL also supports advanced operations like joins, aggregation, and subqueries. Let's explore these concepts with examples:</p>
+            <ul>
+                <li><strong>JOIN:</strong> Combine data from multiple tables. This example demonstrates an INNER JOIN between "employees" and another table, "departments":</li>
+            </ul>
+            <pre>
+                <code>
+-- Create a sample departments table
+CREATE TABLE departments (
+    department VARCHAR(50),
+    location VARCHAR(50)
+);
+
+-- Insert data into departments
+INSERT INTO departments (department, location)
+VALUES ('Engineering', 'Building A'),
+       ('Marketing', 'Building B'),
+       ('HR', 'Building C');
+
+-- Perform an INNER JOIN between employees and departments
+SELECT employees.name, employees.department, departments.location
+FROM employees
+INNER JOIN departments
+ON employees.department = departments.department;
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Aggregation Functions:</strong> Use functions like COUNT, SUM, and AVG to analyze data. This example calculates the average salary in the "Engineering" department:</li>
+            </ul>
+            <pre>
+                <code>
+-- Calculate the average salary in the Engineering department
+SELECT AVG(salary) AS average_salary
+FROM employees
+WHERE department = 'Engineering';
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Subqueries:</strong> A query within another query. This example uses a subquery to find the names of employees who earn above the average salary:</li>
+            </ul>
+            <pre>
+                <code>
+-- Find employees who earn above the average salary
+SELECT name, salary
+FROM employees
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employees
+);
+                </code>
+            </pre>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-5">
+            <h2>Conclusion</h2>
+            <p>This blog provided an overview of basic and advanced SQL operations through practical examples and exercises. We hope you found these examples useful in understanding SQL and its capabilities. Keep practicing with SQL queries to strengthen your skills.</p>
+            <p>If you have any questions or would like to see more SQL examples, feel free to leave a comment below. Stay tuned for more content on SQL and data science.</p>
+        </section>
+    </div>
+        
+
+    </main>
+
+    <footer>
+        <p>© 2024 Data Enthusiasts Blog. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
