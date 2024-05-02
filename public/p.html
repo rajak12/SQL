@@ -60,69 +60,73 @@
             </div>
         </nav>
     </header>
-
     <main>
-        <section id="intro">
-            <h2>Introduction</h2>
-            <p>
-                Data Manipulation Language (DML) is a subset of SQL used for modifying data within a database. DML commands allow you to
-                insert new data, update existing data, and delete data. Additionally, you can query or retrieve data from a database.
-            </p>
-        </section>
-
-        <section id="commands">
-            <h2>DML Commands</h2>
-            <p>The four primary DML commands are:</p>
+        <!-- Section for Window Functions -->
+        <section class="mb-5">
+            <h2>Understanding Window Functions</h2>
+            <p>Window functions allow you to perform calculations across a set of table rows that are related to the current row.</p>
             <ul>
-                <li>INSERT</li>
-                <li>UPDATE</li>
-                <li>DELETE</li>
-                <li>SELECT</li>
+                <li><strong>ROW_NUMBER:</strong> Returns a unique row number within a partition.</li>
+                <li><strong>RANK:</strong> Returns the rank of each row within a partition.</li>
+                <li><strong>DENSE_RANK:</strong> Similar to RANK, but without gaps between ranks.</li>
             </ul>
+            <h3>Example Query</h3>
+            <pre>
+                <code>
+SELECT employee_id, salary, ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num
+FROM employees;
+                </code>
+            </pre>
         </section>
 
-        <section id="insert">
-            <h2>INSERT Command</h2>
-            <p>
-                The INSERT command is used to add new rows to a table. Here's an example:
-            </p>
-            <pre><code>INSERT INTO employees (name, age, position) VALUES ('John Doe', 30, 'Engineer');</code></pre>
-            <p>This example adds a new employee to the "employees" table with the specified values.</p>
+        <!-- Section for Common Table Expressions (CTEs) -->
+        <section class="mb-5">
+            <h2>Common Table Expressions (CTEs)</h2>
+            <p>CTEs allow you to create named temporary result sets that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement.</p>
+            <h3>Example Query</h3>
+            <pre>
+                <code>
+WITH top_salaries AS (
+SELECT employee_id, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 10
+)
+SELECT * FROM top_salaries;
+                </code>
+            </pre>
         </section>
 
-        <section id="update">
-            <h2>UPDATE Command</h2>
-            <p>
-                The UPDATE command is used to modify existing data in a table. Example:
-            </p>
-            <pre><code>UPDATE employees SET age = 31 WHERE name = 'John Doe';</code></pre>
-            <p>This example updates the age of an employee named "John Doe" to 31.</p>
-        </section>
-
-        <section id="delete">
-            <h2>DELETE Command</h2>
-            <p>
-                The DELETE command is used to remove rows from a table. Example:
-            </p>
-            <pre><code>DELETE FROM employees WHERE name = 'John Doe';</code></pre>
-            <p>This example deletes the employee named "John Doe" from the "employees" table.</p>
-        </section>
-
-        <section id="select">
-            <h2>SELECT Command</h2>
-            <p>
-                The SELECT command is used to query data from a table. Example:
-            </p>
-            <pre><code>SELECT * FROM employees;</code></pre>
-            <p>This example retrieves all rows from the "employees" table.</p>
+        <!-- Section for Recursive Queries -->
+        <section>
+            <h2>Recursive Queries with CTEs</h2>
+            <p>Recursive CTEs allow you to reference a CTE within its own definition, enabling complex recursive queries.</p>
+            <h3>Example Query</h3>
+            <pre>
+                <code>
+WITH RECURSIVE employee_hierarchy AS (
+SELECT employee_id, manager_id
+FROM employees
+WHERE manager_id IS NULL
+UNION ALL
+SELECT e.employee_id, e.manager_id
+FROM employees e
+JOIN employee_hierarchy eh
+ON e.manager_id = eh.employee_id
+)
+SELECT * FROM employee_hierarchy;
+                </code>
+            </pre>
         </section>
     </main>
+</div>
 
-    <footer>
-        <p>© 2024 Data Enthusiasts Blog. All rights reserved.</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+<!-- Footer -->
+<footer>
+    <p>© 2024 Data Enthusiasts Blog. All rights reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 </html>

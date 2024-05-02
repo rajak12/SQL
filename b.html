@@ -60,69 +60,45 @@
             </div>
         </nav>
     </header>
-
     <main>
-        <section id="intro">
-            <h2>Introduction</h2>
-            <p>
-                Data Manipulation Language (DML) is a subset of SQL used for modifying data within a database. DML commands allow you to
-                insert new data, update existing data, and delete data. Additionally, you can query or retrieve data from a database.
-            </p>
+        <!-- Section about SQL -->
+        <section id="about-sql" class="mb-4">
+            <h2>What is SQL?</h2>
+            <p>Structured Query Language (SQL) is the standard language for managing and manipulating databases. It is used to create, read, update, and delete data in relational databases.</p>
         </section>
-
-        <section id="commands">
-            <h2>DML Commands</h2>
-            <p>The four primary DML commands are:</p>
+    
+        <!-- Section on SQL commands -->
+        <section id="sql-commands" class="mb-4">
+            <h2>SQL Commands</h2>
+            <p>SQL has different types of commands to perform various operations on databases. The main types are:</p>
             <ul>
-                <li>INSERT</li>
-                <li>UPDATE</li>
-                <li>DELETE</li>
-                <li>SELECT</li>
+                <li><strong>Data Definition Language (DDL):</strong> Commands like CREATE, ALTER, and DROP, used to define the structure of a database.</li>
+                <li><strong>Data Manipulation Language (DML):</strong> Commands like SELECT, INSERT, UPDATE, and DELETE, used to manipulate data.</li>
+                <li><strong>Data Control Language (DCL):</strong> Commands like GRANT and REVOKE, used to manage user permissions.</li>
             </ul>
         </section>
-
-        <section id="insert">
-            <h2>INSERT Command</h2>
-            <p>
-                The INSERT command is used to add new rows to a table. Here's an example:
-            </p>
-            <pre><code>INSERT INTO employees (name, age, position) VALUES ('John Doe', 30, 'Engineer');</code></pre>
-            <p>This example adds a new employee to the "employees" table with the specified values.</p>
-        </section>
-
-        <section id="update">
-            <h2>UPDATE Command</h2>
-            <p>
-                The UPDATE command is used to modify existing data in a table. Example:
-            </p>
-            <pre><code>UPDATE employees SET age = 31 WHERE name = 'John Doe';</code></pre>
-            <p>This example updates the age of an employee named "John Doe" to 31.</p>
-        </section>
-
-        <section id="delete">
-            <h2>DELETE Command</h2>
-            <p>
-                The DELETE command is used to remove rows from a table. Example:
-            </p>
-            <pre><code>DELETE FROM employees WHERE name = 'John Doe';</code></pre>
-            <p>This example deletes the employee named "John Doe" from the "employees" table.</p>
-        </section>
-
-        <section id="select">
-            <h2>SELECT Command</h2>
-            <p>
-                The SELECT command is used to query data from a table. Example:
-            </p>
-            <pre><code>SELECT * FROM employees;</code></pre>
-            <p>This example retrieves all rows from the "employees" table.</p>
+    
+        <!-- Section with a simple SQL query example -->
+        <section id="example">
+            <h2>Simple SQL Example</h2>
+            <p>Here is a simple SQL query to select all records from a table called "employees":</p>
+            <pre>
+                <code>
+    SELECT * FROM employees;
+                </code>
+            </pre>
         </section>
     </main>
+    
 
-    <footer>
-        <p>© 2024 Data Enthusiasts Blog. All rights reserved.</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+<!-- Footer -->
+<footer>
+    <p>&copy; © 2024 Data Enthusiasts Blog. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS for navigation -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 </html>
