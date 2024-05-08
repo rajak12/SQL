@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css"> <!-- Link to CSS file -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q7JBLSHEHB');
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>SQL and Python basic for Beginners</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Chapters
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                <li><a class="dropdown-item" href="case1.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case2.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case3.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case4.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case5.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case6.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case7.html"> Case Study</a></li>
+
+
+
+
+
+
+
+                                <!-- <li><a class="dropdown-item" href="./dml.html">Data Manipulation Language (DML) Commands</a></li>                                
+                                <li><a class="dropdown-item" href="./dcl.html">Data Definition Language (DDL) Commands</a></li>                              
+                                <li><a class="dropdown-item" href="./ddl.html">Data Control Language (DCL) Commands</a>  </li>                                
+                                 <li><a class="dropdown-item" href="./qc.html">Querying Data Commands</a></li>                                
+                                  <li><a class="dropdown-item" href="./s.html">Subqueries in SQL</a></li>                                 
+                                  <li><a class="dropdown-item" href="./a.html">Aggregate Functions Commands</a></li>                                
+                                   <li><a class="dropdown-item" href="./j.html">Joining Commands</a></li>                                 
+                                   <li><a class="dropdown-item" href="./p.html">Advanced SQL</a></li>                                 
+                                   <li><a class="dropdown-item" href="./time.html">Time and Date</a></li>  -->
+
+                                <!-- <li><hr class="dropdown-divider"></li>  -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>  -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Supply Chain SQL Database and Analysis</h1>
+        <p>This article provides SQL scripts to create a supply chain database for "Richard's Supply," a company dealing
+            with food products. The database schema includes customers, products, orders, order items, and suppliers.
+            The following sections describe the SQL code to create the database, insert sample data, and analyze
+            business operations.</p>
+
+        <h2>Create the Database and Tables</h2>
+        <p>Here's the SQL code to create the database and define the required tables:</p>
+        <pre><code class="language-sql">
+-- Create the supply chain database
+CREATE DATABASE supply_chain;
+
+-- Use the newly created database
+USE supply_chain;
+
+-- Create Customer Table
+CREATE TABLE customer (
+  id INT PRIMARY KEY,
+  firstname VARCHAR(50),
+  lastname VARCHAR(50),
+  city VARCHAR(50),
+  country VARCHAR(50),
+  phone VARCHAR(15),
+  email VARCHAR(50)
+);
+
+-- Create OrderItem Table
+CREATE TABLE orderitem (
+  id INT PRIMARY KEY,
+  orderid INT,
+  productid INT,
+  quantity INT,
+  unitprice DECIMAL(10, 2),
+  FOREIGN KEY (orderid) REFERENCES orders(id),
+  FOREIGN KEY (productid) REFERENCES product(id)
+);
+
+-- Create Orders Table
+CREATE TABLE orders (
+  id INT PRIMARY KEY,
+  ordernumber INT,
+  customerid INT,
+  orderdate DATE,
+  totalamount DECIMAL(10, 2),
+  FOREIGN KEY (customerid) REFERENCES customer(id)
+);
+
+-- Create Product Table
+CREATE TABLE product (
+  id INT PRIMARY KEY,
+  productname VARCHAR(100),
+  category VARCHAR(50),
+  supplierid INT,
+  unitprice DECIMAL(10, 2),
+  isdiscontinued BOOLEAN,
+  FOREIGN KEY (supplierid) REFERENCES supplier(id)
+);
+
+-- Create Supplier Table
+CREATE TABLE supplier (
+  id INT PRIMARY KEY,
+  companyname VARCHAR(100),
+  contactname VARCHAR(50),
+  contactemail VARCHAR(100),
+  country VARCHAR(50),
+  city VARCHAR(50)
+);
+    </code></pre>
+
+        <h2>Insert Sample Data</h2>
+        <p>Next, let's insert sample data into the tables to simulate real-world scenarios:</p>
+        <pre><code class="language-sql">
+-- Insert into Customer Table
+INSERT INTO customer (id, firstname, lastname, city, country, phone, email)
+VALUES 
+  (1, 'John', 'Doe', 'New York', 'USA', '1234567890', 'john.doe@example.com'),
+  (2, 'Jane', 'Smith', 'London', 'UK', '0987654321', 'jane.smith@example.com'),
+  (3, 'Maria', 'Garcia', 'Mexico City', 'Mexico', '1122334455', 'maria.garcia@example.com'),
+  (4, 'Liam', 'Johnson', 'Sydney', 'Australia', '5566778899', 'liam.johnson@example.com'),
+  (5, 'Olivia', 'Brown', 'Toronto', 'Canada', '9988776655', 'olivia.brown@example.com');
+
+-- Insert into Supplier Table
+INSERT INTO supplier (id, companyname, contactname, contactemail, country)
+VALUES 
+  (1, 'Tech Supplies Ltd.', 'Alice Brown', 'alice.brown@techsupplies.com', 'USA'),
+  (2, 'Global Electronics', 'Michael White', 'michael.white@globalelectronics.com', 'UK'),
+  (3, 'Component World', 'Carlos Fernandez', 'carlos.fernandez@componentworld.com', 'Mexico'),
+  (4, 'Hardware Inc.', 'Samantha Black', 'samantha.black@hardwareinc.com', 'Australia'),
+  (5, 'North Electronics', 'David Blue', 'david.blue@northelectronics.com', 'Canada');
+
+-- Insert into Product Table
+INSERT INTO product (id, productname, category, supplierid, unitprice, isdiscontinued)
+VALUES 
+  (1, 'Wireless Mouse', 'Mouse', 1, 29.99, FALSE),
+  (2, 'Mechanical Keyboard', 'Keyboard', 2, 79.99, FALSE),
+  (3, 'Gaming Laptop', 'Laptop', 3, 1299.99, FALSE),
+  (4, 'Laser Printer', 'Printer', 4, 199.99, FALSE),
+  (5, 'External Hard Drive', 'Storage', 5, 59.99, FALSE);
+
+-- Insert into Orders Table
+INSERT INTO orders (id, ordernumber, customerid, orderdate, totalamount)
+VALUES 
+  (1, 1001, 1, '2024-01-01', 299.90),
+  (2, 1002, 2, '2024-02-01', 399.95),
+  (3, 1003, 3, '2024-03-01', 2599.98),
+  (4, 1004, 4, '2024-04-01', 199.99);
+
+-- Insert into OrderItem Table
+INSERT INTO orderitem (id, orderid, productid, quantity, unitprice)
+VALUES 
+  (1, 1, 1, 10, 29.99),
+  (2, 2, 2, 5, 79.99),
+  (3, 3, 3, 2, 1299.99),
+  (4, 4, 4, 1, 199.99);
+    </code></pre>
+
+        <h2>Running the Queries</h2>
+        <p>With the tables created and populated, we can run SQL queries to explore the data, know the business, and
+            analyze various aspects. Here are some key queries:</p>
+
+        <h3>PART A: Explore The Data</h3>
+        <pre><code class="language-sql">
+-- 1. Read the data from all tables
+SELECT * FROM customer;
+SELECT * FROM orderitem;
+SELECT * FROM orders;
+SELECT * FROM product;
+SELECT * FROM supplier;
+
+-- 2. Country-wise count of customers
+SELECT country, COUNT(*) AS cust_count 
+FROM customer 
+GROUP BY country;
+
+-- 3. Display the products which are not discontinued
+SELECT productname 
+FROM product 
+WHERE isdiscontinued = 0;
+
+-- 4. List companies along with the product names they are supplying
+SELECT sup.companyname, pro.productname
+FROM supplier sup 
+JOIN product pro ON sup.id = pro.supplierid;
+
+-- 5. Display customer's information who stays in 'Mexico'
+SELECT * 
+FROM customer 
+WHERE country = 'Mexico';
+
+-- 6. Costliest item ordered by customers along with customer details
+SELECT cus.id, cus.firstname, cus.lastname, MAX(orit.unitprice) AS costliest_item_price
+FROM customer cus 
+JOIN orders ord ON cus.id = ord.customerid
+JOIN orderitem orit ON ord.id = orit.orderid
+GROUP BY cus.id, cus.firstname, cus.lastname;
+
+-- 7. Supplier with the highest number of products
+SELECT supplierid, COUNT(DISTINCT productname) AS count_pro_name
+FROM product 
+GROUP BY supplierid 
+ORDER BY count_pro_name DESC 
+LIMIT 1;
+
+-- 8. Month-wise and year-wise count of orders placed
+SELECT MONTHNAME(orderdate) AS month, YEAR(orderdate) AS year, COUNT(ordernumber) AS count_orders
+FROM orders 
+GROUP BY month, year;
+
+-- 9. Country with the maximum suppliers
+SELECT country, COUNT(id) 
+FROM supplier 
+GROUP BY country 
+ORDER BY COUNT(id) DESC 
+LIMIT 1;
+
+-- 10. Customers who did not place any order
+SELECT * 
+FROM customer 
+WHERE id NOT IN (SELECT customerid FROM orders);
+    </code></pre>
+    </main>
+
+    <footer>
+        <p>© 2024 Data Enthusiasts Blog. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

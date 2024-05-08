@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css"> <!-- Link to CSS file -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q7JBLSHEHB');
+</script>
+</head>
+
+<body>
+    <header>
+        <h1>SQL and Python basic for Beginners</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Chapters
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                <li><a class="dropdown-item" href="case1.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case2.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case3.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case4.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case5.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case6.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case7.html"> Case Study</a></li>
+
+
+
+
+
+
+
+                                <!-- <li><a class="dropdown-item" href="./dml.html">Data Manipulation Language (DML) Commands</a></li>                                
+                                <li><a class="dropdown-item" href="./dcl.html">Data Definition Language (DDL) Commands</a></li>                              
+                                <li><a class="dropdown-item" href="./ddl.html">Data Control Language (DCL) Commands</a>  </li>                                
+                                 <li><a class="dropdown-item" href="./qc.html">Querying Data Commands</a></li>                                
+                                  <li><a class="dropdown-item" href="./s.html">Subqueries in SQL</a></li>                                 
+                                  <li><a class="dropdown-item" href="./a.html">Aggregate Functions Commands</a></li>                                
+                                   <li><a class="dropdown-item" href="./j.html">Joining Commands</a></li>                                 
+                                   <li><a class="dropdown-item" href="./p.html">Advanced SQL</a></li>                                 
+                                   <li><a class="dropdown-item" href="./time.html">Time and Date</a></li>  -->
+
+                                <!-- <li><hr class="dropdown-divider"></li>  -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>  -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Online Store - SQL Case Study</h1>
+    
+    <h2>1. Create the Database</h2>
+    <p>Create a new database to work with:</p>
+    <pre><code class="language-sql">
+-- Create the new database
+CREATE DATABASE online_store_db;
+
+-- Use the created database
+USE online_store_db;
+    </code></pre>
+    
+    <h2>2. Define Tables</h2>
+    <p>Define the tables for Customers, Products, Orders, and Employees:</p>
+    <pre><code class="language-sql">
+-- Create Customers Table
+CREATE TABLE customers (
+  customer_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create Products Table
+CREATE TABLE products (
+  product_id INT PRIMARY KEY,
+  product_name VARCHAR(100),
+  category VARCHAR(50),
+  price DECIMAL(10, 2),
+  stock INT
+);
+
+-- Create Orders Table
+CREATE TABLE orders (
+  order_id INT PRIMARY KEY,
+  customer_id INT,
+  order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  total_amount DECIMAL(10, 2),
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+-- Create Employees Table
+CREATE TABLE employees (
+  employee_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  is_salesperson BIT,
+  hired_date TIMESTAMP,
+  department VARCHAR(50)
+);
+    </code></pre>
+    
+    <h2>3. Insert Sample Data</h2>
+    <p>Insert sample data into the tables to simulate real-world scenarios:</p>
+    <pre><code class="language-sql">
+-- Insert into Customers Table
+INSERT INTO customers (customer_id, first_name, last_name, email)
+VALUES 
+  (1, 'John', 'Doe', 'john.doe@example.com'),
+  (2, 'Jane', 'Smith', 'jane.smith@example.com'),
+  (3, 'Alice', 'Johnson', 'alice.johnson@example.com'),
+  (4, 'Bob', 'Williams', 'bob.williams@example.com'),
+  (5, 'Charlie', 'Brown', 'charlie.brown@example.com');
+
+-- Insert into Products Table
+INSERT INTO products (product_id, product_name, category, price, stock)
+VALUES 
+  (1, 'Laptop', 'Electronics', 899.99, 100),
+  (2, 'Smartphone', 'Electronics', 699.99, 150),
+  (3, 'Headphones', 'Accessories', 99.99, 200),
+  (4, 'Tablet', 'Electronics', 299.99, 80),
+  (5, 'Camera', 'Electronics', 499.99, 50);
+
+-- Insert into Orders Table
+INSERT INTO orders (order_id, customer_id, order_date, total_amount)
+VALUES 
+  (1, 1, '2024-01-01 09:00:00', 899.99),
+  (2, 2, '2024-01-02 10:00:00', 699.99),
+  (3, 3, '2024-01-03 11:00:00', 299.99),
+  (4, 4, '2024-01-04 12:00:00', 99.99),
+  (5, 5, '2024-01-05 13:00:00', 499.99);
+
+-- Insert into Employees Table
+INSERT INTO employees (employee_id, first_name, last_name, is_salesperson, hired_date, department)
+VALUES 
+  (1, 'Alice', 'Johnson', 1, '2023-01-01 08:00:00', 'Sales'),
+  (2, 'Bob', 'Williams', 1, '2023-01-02 09:00:00', 'Sales'),
+  (3, 'Charlie', 'Brown', 0, '2023-01-03 10:00:00', 'Support'),
+  (4, 'David', 'Lee', 0, '2023-01-04 11:00:00', 'IT'),
+  (5, 'Eva', 'White', 1, '2023-01-05 12:00:00', 'Sales');
+    </code></pre>
+
+    <h2>4. Perform Basic SQL Operations</h2>
+    <p>With the tables and data in place, perform SQL operations to extract insights:</p>
+    
+    <h3>4.1 Retrieve Data</h3>
+    <pre><code class="language-sql">
+-- Retrieve all customers
+SELECT * FROM customers;
+
+-- Retrieve all products in the Electronics category
+SELECT * FROM products WHERE category = 'Electronics';
+
+-- Retrieve all orders placed by a specific customer
+SELECT * FROM orders WHERE customer_id = 1;
+    </code></pre>
+
+    <h3>4.2 Perform Aggregations</h3>
+    <pre><code class="language-sql">
+-- Get the total revenue from all orders
+SELECT SUM(total_amount) AS total_revenue FROM orders;
+
+-- Get the average price of all products
+SELECT AVG(price) AS average_price FROM products;
+
+-- Count the number of employees in the Sales department
+SELECT COUNT(*) AS num_sales_employees FROM employees WHERE department = 'Sales';
+    </code></pre>
+    
+    <h3>4.3 Perform Joins</h3>
+    <pre><code class="language-sql">
+-- Join orders and customers to get customer information for each order
+SELECT 
+  o.order_id,
+  c.first_name AS customer_first_name,
+  c.last_name AS customer_last_name,
+  o.total_amount
+FROM 
+  orders AS o
+JOIN 
+  customers AS c 
+  ON o.customer_id = c.customer_id;
+
+-- Join employees and orders to get salespersons for each order
+SELECT 
+  o.order_id,
+  e.first_name AS salesperson_first_name,
+  e.last_name AS salesperson_last_name,
+  o.total_amount
+FROM 
+  orders AS o
+JOIN 
+  employees AS e 
+  ON e.is_salesperson = 1;
+    </code></pre>
+
+    <h3>4.4 Group and Aggregate Data</h3>
+    <pre><code class="language-sql">
+-- Get the total sales by customer
+SELECT 
+  c.first_name AS customer_first_name,
+  c.last_name AS customer_last_name,
+  SUM(o.total_amount) AS total_sales
+FROM 
+  orders AS o
+JOIN 
+  customers AS c 
+  ON o.customer_id = c.customer_id
+GROUP BY 
+  c.customer_id;
+
+-- Get the total revenue by product category
+SELECT 
+  p.category,
+  SUM(o.total_amount) AS total_revenue
+FROM 
+  orders AS o
+JOIN 
+  products AS p 
+  ON p.product_id = o.order_id
+GROUP BY 
+  p.category;
+    </code></pre>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Data Enthusiasts Blog. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

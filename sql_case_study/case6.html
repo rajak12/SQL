@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css"> <!-- Link to CSS file -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7JBLSHEHB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q7JBLSHEHB');
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>SQL and Python basic for Beginners</h1>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Chapters
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                <li><a class="dropdown-item" href="case1.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case2.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case3.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case4.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case5.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case6.html"> Case Study</a></li>
+                                <li><a class="dropdown-item" href="case7.html"> Case Study</a></li>
+
+
+
+
+
+
+
+                                <!-- <li><a class="dropdown-item" href="./dml.html">Data Manipulation Language (DML) Commands</a></li>                                
+                                <li><a class="dropdown-item" href="./dcl.html">Data Definition Language (DDL) Commands</a></li>                              
+                                <li><a class="dropdown-item" href="./ddl.html">Data Control Language (DCL) Commands</a>  </li>                                
+                                 <li><a class="dropdown-item" href="./qc.html">Querying Data Commands</a></li>                                
+                                  <li><a class="dropdown-item" href="./s.html">Subqueries in SQL</a></li>                                 
+                                  <li><a class="dropdown-item" href="./a.html">Aggregate Functions Commands</a></li>                                
+                                   <li><a class="dropdown-item" href="./j.html">Joining Commands</a></li>                                 
+                                   <li><a class="dropdown-item" href="./p.html">Advanced SQL</a></li>                                 
+                                   <li><a class="dropdown-item" href="./time.html">Time and Date</a></li>  -->
+
+                                <!-- <li><hr class="dropdown-divider"></li>  -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link disabled" aria-disabled="true">Link</a> -->
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>  -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Flowlogistic - Logistics and Supply Chain Case Study</h1>
+        <p>Flowlogistic is a leading logistics and supply chain provider, offering a variety of transportation services
+            including rail, truck, aircraft, and oceanic shipping. The company has encountered bottlenecks due to
+            outdated infrastructure, and it is looking to upgrade its technology to improve operations and efficiency.
+        </p>
+
+        <h2>Database Design</h2>
+        <p>The database schema for Flowlogistic is designed to capture the core aspects of its logistics business. The
+            schema includes tables for customers, orders, shipments, products, inventory, tracking, and suppliers.
+            Here's the SQL script to create the database and define the required tables:</p>
+        <pre><code class="language-sql">
+-- Create the Flowlogistic database
+CREATE DATABASE flowlogistic_db;
+
+-- Use the newly created database
+USE flowlogistic_db;
+
+-- Create Customers Table
+CREATE TABLE customers (
+  customer_id INT PRIMARY KEY,
+  customer_name VARCHAR(100),
+  contact_name VARCHAR(50),
+  contact_email VARCHAR(100),
+  phone VARCHAR(15),
+  country VARCHAR(50),
+  city VARCHAR(50)
+);
+
+-- Create Orders Table
+CREATE TABLE orders (
+  order_id INT PRIMARY KEY,
+  customer_id INT,
+  order_date DATE,
+  shipment_id INT,
+  total_amount DECIMAL(10, 2),
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+-- Create Shipments Table
+CREATE TABLE shipments (
+  shipment_id INT PRIMARY KEY,
+  shipment_date DATE,
+  destination VARCHAR(100),
+  shipment_method VARCHAR(50),
+  FOREIGN KEY (shipment_id) REFERENCES orders(shipment_id)
+);
+
+-- Create Products Table
+CREATE TABLE products (
+  product_id INT PRIMARY KEY,
+  product_name VARCHAR(100),
+  product_type VARCHAR(50),
+  supplier_id INT,
+  unit_price DECIMAL(10, 2),
+  FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
+);
+
+-- Create Inventory Table
+CREATE TABLE inventory (
+  inventory_id INT PRIMARY KEY,
+  product_id INT,
+  quantity INT,
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+-- Create Tracking Table
+CREATE TABLE tracking (
+  tracking_id INT PRIMARY KEY,
+  shipment_id INT,
+  tracking_time TIMESTAMP,
+  location VARCHAR(100),
+  status VARCHAR(50),
+  FOREIGN KEY (shipment_id) REFERENCES shipments(shipment_id)
+);
+
+-- Create Suppliers Table
+CREATE TABLE suppliers (
+  supplier_id INT PRIMARY KEY,
+  supplier_name VARCHAR(100),
+  contact_name VARCHAR(50),
+  contact_email VARCHAR(100),
+  phone VARCHAR(15),
+  country VARCHAR(50),
+  city VARCHAR(50)
+);
+    </code></pre>
+
+        <h2>Sample Data Insertion</h2>
+        <p>To simulate real-world operations, let's insert sample data into these tables to represent customers, orders,
+            shipments, products, inventory, tracking, and suppliers:</p>
+        <pre><code class="language-sql">
+-- Insert into Customers Table
+INSERT INTO customers (customer_id, customer_name, contact_name, contact_email, phone, country, city)
+VALUES 
+  (1, 'Acme Corp.', 'John Doe', 'john.doe@acme.com', '123-456-7890', 'USA', 'New York'),
+  (2, 'Beta Industries', 'Jane Smith', 'jane.smith@beta.com', '234-567-8901', 'UK', 'London');
+
+-- Insert into Suppliers Table
+INSERT INTO suppliers (supplier_id, supplier_name, contact_name, contact_email, phone, country, city)
+VALUES 
+  (1, 'Tech Supplies Ltd.', 'Alice Brown', 'alice.brown@techsupplies.com', '123-456-7890', 'USA', 'New York'),
+  (2, 'Global Electronics', 'Michael White', 'michael.white@globalelectronics.com', '234-567-8901', 'UK', 'London');
+
+-- Insert into Products Table
+INSERT INTO products (product_id, product_name, product_type, supplier_id, unit_price)
+VALUES 
+  (1, 'Organic Apples', 'Fruit', 1, 3.99),
+  (2, 'Whole Grain Bread', 'Bread', 2, 2.49);
+
+-- Insert into Orders Table
+INSERT INTO orders (order_id, customer_id, order_date, shipment_id, total_amount)
+VALUES 
+  (1, 1, '2024-01-01', 1, 299.90),
+  (2, 2, '2024-02-01', 2, 399.95);
+
+-- Insert into Shipments Table
+INSERT INTO shipments (shipment_id, shipment_date, destination, shipment_method)
+VALUES 
+  (1, '2024-01-01', 'Los Angeles', 'Truck'),
+  (2, '2024-02-01', 'Paris', 'Aircraft');
+
+-- Insert into Inventory Table
+INSERT INTO inventory (inventory_id, product_id, quantity)
+VALUES 
+  (1, 1, 100),
+  (2, 2, 200);
+
+-- Insert into Tracking Table
+INSERT INTO tracking (tracking_id, shipment_id, tracking_time, location, status)
+VALUES 
+  (1, 1, '2024-01-01 08:00:00', 'Los Angeles', 'in-transit'),
+  (2, 2, '2024-02-01 10:00:00', 'Paris', 'delivered');
+    </code></pre>
+
+        <h2>Analysis Queries</h2>
+        <p>With the tables created and populated with sample data, let's perform various analyses to understand
+            Flowlogistic's operations from different perspectives:</p>
+
+        <h3>Customer Analysis</h3>
+        <pre><code class="language-sql">
+-- Which customers place the most orders?
+SELECT customer_id, COUNT(order_id) AS total_orders
+FROM orders
+GROUP BY customer_id
+ORDER BY total_orders DESC;
+
+-- Which customers have the highest total spending?
+SELECT customer_id, SUM(total_amount) AS total_spending
+FROM orders
+GROUP BY customer_id
+ORDER BY total_spending DESC;
+    </code></pre>
+
+        <h3>Shipment Analysis</h3>
+        <pre><code class="language-sql">
+-- Which shipment methods are most frequently used?
+SELECT shipment_method, COUNT(shipment_id) AS total_shipments
+FROM shipments
+GROUP BY shipment_method
+ORDER BY total_shipments DESC;
+
+-- Which shipments are most likely to be delayed?
+SELECT shipment_id, COUNT(status) AS delay_count
+FROM tracking
+WHERE status = 'delayed'
+GROUP BY shipment_id
+ORDER BY delay_count DESC;
+    </code></pre>
+
+        <h3>Product and Inventory Analysis</h3>
+        <pre><code class="language-sql">
+-- Which products have the highest demand?
+SELECT product_id, product_name, SUM(quantity) AS total_demand
+FROM order_items
+GROUP BY product_id, product_name
+ORDER BY total_demand DESC;
+
+-- Which products have the lowest inventory?
+SELECT product_id, product_name, quantity AS current_stock
+FROM inventory
+ORDER BY current_stock ASC;
+    </code></pre>
+    </main>
+
+    <footer>
+        <p>© 2024 Data Enthusiasts Blog. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
